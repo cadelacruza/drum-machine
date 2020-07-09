@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="drumO.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Drum</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="keys">
+        <div class="key" id="q" data-key="81"></div>
+        <div class="key" id="w" data-key="87"></div>
+        <div class="key" id="e" data-key="69"></div>
+        <div class="key" id="a" data-key="65"></div>
+        <div class="key" id="s" data-key="83"></div>
+        <div class="key" id="d" data-key="68"></div>
+        <div class="key" id="z" data-key="90"></div>
+        <div class="key" id="x" data-key="88"></div>
+        <div class="key" id="c" data-key="67"></div>
+      </div>
+      <div id="controls">
+        <div id="image">
+          <p>Drum</p>
+          <img src="drumO.png" alt="Drum Icon" />
+        </div>
+        <div class="toggle">
+          <p>Power</p>
+          <div id="toggle-btn-1" class="toggle-btn active">
+            <div class="circle" id="circle-1"></div>
+          </div>
+        </div>
+        <div id="display"></div>
+        <input type="range" name="range" id="range" min="1" max="10" />
+        <div class="toggle">
+          <p>Bank</p>
+          <div id="toggle-btn-2" class="toggle-btn">
+            <div class="circle" id="circle-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio
+      data-key="81"
+      src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
+    ></audio>
+
+    <audio
+      data-key="87"
+      src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"
+    ></audio>
+
+    <audio
+      data-key="69"
+      src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"
+    ></audio>
+
+    <audio
+      data-key="65"
+      src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"
+    ></audio>
+
+    <audio
+      data-key="83"
+      src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"
+    ></audio>
+
+    <audio
+      data-key="68"
+      src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"
+    ></audio>
+
+    <audio
+      data-key="90"
+      src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"
+    ></audio>
+
+    <audio
+      data-key="88"
+      src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"
+    ></audio>
+
+    <audio
+      data-key="67"
+      src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"
+    ></audio>
+
+    <script src="app.js"></script>
+  </body>
+</html>
