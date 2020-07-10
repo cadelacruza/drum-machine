@@ -51,6 +51,7 @@ img {
 .key {
   border-radius: 10px;
   transition: all 0.07s;
+  cursor: pointer;
 }
 
 .playing {
