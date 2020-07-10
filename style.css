@@ -31,6 +31,10 @@ img {
   grid-template-columns: repeat(2, 1fr);
 }
 #display {
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
   background-color: white;
   width: 200px;
