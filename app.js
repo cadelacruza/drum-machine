@@ -1,22 +1,20 @@
 const powerButton = document.querySelector("#toggle-btn-1");
-const circleOne = document.querySelector("#circle-1");
-console.log(circleOne);
-powerButton.addEventListener("click", removeSound);
-function removeSound(e) {
-  window.removeEventListener("keydown", playSound);
-}
+
 window.addEventListener("keydown", playSound);
-
 function playSound(e) {
-  // console.log(e.keyCode);
-  const audio = document.querySelector(`audio[data-key = "${e.keyCode}"]`);
-  const key = document.querySelector(`.key[data-key = "${e.keyCode}"]`);
-  //console.log(key);
-  if (!audio) return;
-  audio.currentTime = 0;
-  audio.play();
+  if (powerButton.classList.contains("active")) {
+    const audio = document.querySelector(`audio[data-key = "${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key = "${e.keyCode}"]`);
+    //console.log(key);
+    if (!audio) return;
+    audio.currentTime = 0;
+    audio.play();
 
-  key.classList.add("playing");
+    key.classList.add("playing");
+  } else {
+    return;
+  }
+  // console.log(e.keyCode);
 }
 
 const keys = document.querySelectorAll(".key");
