@@ -1,17 +1,33 @@
 const powerButton = document.querySelector("#toggle-btn-1");
-
+const bankOne = document.querySelector("#toggle-btn-2");
 const display = document.querySelector("#display");
-
-//console.log(document.querySelector("input[type = range]").value);
 
 window.addEventListener("keydown", playSound);
 function playSound(e) {
-  if (powerButton.classList.contains("active")) {
+  if (
+    powerButton.classList.contains("active") &&
+    !bankOne.classList.contains("active")
+  ) {
     const audio = document.querySelector(`audio[data-key = "${e.keyCode}"]`);
     const key = document.querySelector(`.key[data-key = "${e.keyCode}"]`);
 
     if (!audio) return;
-    //console.log(audio.volume);
+    audio.currentTime = 0;
+    audio.volume = document.querySelector("input[type = range]").value;
+    audio.play();
+    const texto = audio.textContent;
+    display.textContent = texto;
+    key.classList.add("playing");
+  } else if (
+    bankOne.classList.contains("active") &&
+    powerButton.classList.contains("active")
+  ) {
+    const idKey = e.keyCode;
+    const audio = document.getElementById(`${idKey}`);
+    const key = document.querySelector(`.key[data-key = "${e.keyCode}"]`);
+
+    if (!audio) return;
+
     audio.currentTime = 0;
     audio.volume = document.querySelector("input[type = range]").value;
     audio.play();
@@ -42,6 +58,11 @@ toggleOne.addEventListener("click", (e) => {
 
   display.textContent = "";
 });
-toggleTwo.addEventListener("click", (e) =>
-  toggleTwo.classList.toggle("active")
-);
+toggleTwo.addEventListener("click", (e) => {
+  toggleTwo.classList.toggle("active");
+  if (toggleTwo.classList.contains("active")) {
+    display.textContent = "Smooth Piano Kit";
+  } else {
+    display.textContent = "Heater Kit";
+  }
+});
