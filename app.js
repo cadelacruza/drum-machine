@@ -1,6 +1,43 @@
 const powerButton = document.querySelector("#toggle-btn-1");
 const bankOne = document.querySelector("#toggle-btn-2");
 const display = document.querySelector("#display");
+const keysArea = document.querySelector("#keys");
+
+keysArea.addEventListener("click", playSoundClick);
+
+function playSoundClick(e) {
+  if (e.target.classList.contains("key")) {
+    if (
+      powerButton.classList.contains("active") &&
+      !bankOne.classList.contains("active")
+    ) {
+      const idLetter = e.target.childNodes[1].textContent;
+      const audio = document.getElementById(`${idLetter}`);
+
+      if (!audio) return;
+      audio.currentTime = 0;
+      audio.volume = document.querySelector("input[type = range]").value;
+      audio.play();
+      const texto = audio.textContent;
+      display.textContent = texto;
+      e.target.classList.add("playing");
+    } else if (
+      bankOne.classList.contains("active") &&
+      powerButton.classList.contains("active")
+    ) {
+      console.log(e.target.childNodes);
+      const idKey = e.target.childNodes[3].textContent;
+      const audio = document.getElementById(`${idKey}`);
+      if (!audio) return;
+      audio.currentTime = 0;
+      audio.volume = document.querySelector("input[type = range]").value;
+      audio.play();
+      const texto = audio.textContent;
+      display.textContent = texto;
+      e.target.classList.add("playing");
+    }
+  }
+}
 
 window.addEventListener("keydown", playSound);
 function playSound(e) {
