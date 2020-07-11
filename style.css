@@ -8,6 +8,8 @@
 body {
   font-family: "Roboto", sans-serif;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   text-align: center;
   height: 100vh;
@@ -145,7 +147,12 @@ img {
 }
 
 @media screen and (max-width: 600px) {
+  #instructions {
+    transform: scale(0);
+  }
+
   #container {
+    width: 90%;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
     height: 600px;
@@ -198,4 +205,110 @@ img {
       "display display"
       "range range";
   }
+}
+
+#by a {
+  color: white;
+  text-decoration: none;
+}
+
+#by a:hover {
+  filter: brightness(80%);
+}
+
+#instructions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #040316;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+#instructions p {
+  color: white;
+}
+
+#instructions:hover {
+  filter: brightness(150%);
+  cursor: pointer;
+}
+
+#modal.active {
+  display: block;
+  position: fixed;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  height: 320px;
+  width: 600px;
+  background-color: white;
+}
+
+#modal {
+  display: none;
+}
+
+#modal-colors {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+.color-container .colour {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.color-container li {
+  margin: 1rem;
+  list-style: none;
+}
+
+#modal-head #close {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0.5rem;
+  font-size: larger;
+  font-weight: bold;
+}
+
+#modal-head #close:hover {
+  cursor: pointer;
+}
+#uno {
+  background-color: #f3cf0a;
+}
+#dos {
+  background-color: #53cc0a;
+}
+
+#tres {
+  background-color: #e8297b;
+}
+
+#cuatro {
+  background-color: #0aa9ff;
+}
+
+#cinco {
+  background-color: #3f26bf;
+}
+
+#seis {
+  background-color: #ccff00;
+}
+
+#siete {
+  background-color: #00cc90;
+}
+
+#ocho {
+  background-color: #ff9933;
+}
+
+#nine {
+  background-color: #fd3a4a;
 }

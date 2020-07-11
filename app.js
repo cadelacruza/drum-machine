@@ -2,6 +2,17 @@ const powerButton = document.querySelector("#toggle-btn-1");
 const bankOne = document.querySelector("#toggle-btn-2");
 const display = document.querySelector("#display");
 const keysArea = document.querySelector("#keys");
+const instructions = document.querySelector("#instructions");
+const modal = document.querySelector("#modal");
+const cerrar = document.querySelector("#close");
+
+instructions.addEventListener("click", (e) => {
+  modal.classList.add("active");
+});
+
+cerrar.addEventListener("click", (e) => {
+  modal.classList.remove("active");
+});
 
 keysArea.addEventListener("click", playSoundClick);
 
