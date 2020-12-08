@@ -1,6 +1,8 @@
 # Drum Machine
 Drum machine is a web application that plays different sounds responding to key strokes or clicks.
 
+This is a short [video](https://www.youtube.com/watch?v=CXY5iy9AyDs&feature=youtu.be) demo.
+
 # User Stories
 The user is able to:
 
